@@ -1,8 +1,6 @@
 require('dotenv/config') // needed to use .env file to store our MONGO_URL link
 const express = require('express')
 const mongoClient = require('mongodb').MongoClient
-const mongo = require('mongodb')
-
 const cors = require('cors')
 
 const app = express()
@@ -17,7 +15,8 @@ const options = {
 
 let menudb, customersdb
 
-mongo.connect(url, options, (err, mongoClient) => {
+console.log(url)
+mongoClient.connect(url, options, (err, mongoClient) => {
     if (err) {
         console.error(err)
         return
@@ -25,7 +24,7 @@ mongo.connect(url, options, (err, mongoClient) => {
     console.log('We are connected!')
 
     app.listen(3000, () => {
-    console.log('App is listening on port 3000'))
+    console.log('App is listening on port 3000')
     });
 
     const db = mongoClient.db('restaurant')
