@@ -33,7 +33,7 @@ mongoClient.connect(url, options, (err, mongoClient) => {
 })
 
 // get 
-app.get('/', (req, res) => res.status(200).send('Here is my api on AWS!!!'))
+app.get('/', (req, res) => res.status(200).send('Here is my api on AWS'))
 
 // post
 
